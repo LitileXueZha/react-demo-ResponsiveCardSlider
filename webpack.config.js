@@ -32,7 +32,6 @@ module.exports = merge(baseConfig, {
     new webpack.SourceMapDevToolPlugin({
       append: false, // hidden source map
       filename: '[file].map',
-      publicPath: '/',
       moduleFilenameTemplate: 'litilexuezha://[namespace]/[resource-path]?[loaders]',
     }),
   ],

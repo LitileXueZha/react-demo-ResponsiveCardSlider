@@ -18,7 +18,7 @@ var baseConfig = {
     path: DIST,
     filename: 'js/[name].[contenthash].js',
     assetModuleFilename: 'images/[name][ext]',
-    publicPath: '/',
+    publicPath: '/react-demo-ResponsiveCardSlider',
     hashDigestLength: 6,
   },
   module: {
