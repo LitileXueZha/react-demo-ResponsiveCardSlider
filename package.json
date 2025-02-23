@@ -1,0 +1,63 @@
+{
+  "private": true,
+  "name": "react-demo-responsivecardslider",
+  "version": "1.0.0",
+  "description": "Responsive Card Slider (demo)",
+  "scripts": {
+    "start": "webpack serve --config-node-env development --config webpack/dev.js --color",
+    "build": "node scripts/SVGIcons.js && webpack --config-node-env production --progress",
+    "analyze": "webpack --config-node-env production --analyze",
+    "lint": "eslint --fix ./src"
+  },
+  "author": "litilexuezha",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/runtime": "^7.26.9",
+    "autoprefixer": "^10.4.20",
+    "babel-loader": "^9.2.1",
+    "compression-webpack-plugin": "^11.1.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "emmet": "^2.4.11",
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "postcss": "^8.5.3",
+    "postcss-loader": "^8.1.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.2.0",
+    "redux": "^5.0.1",
+    "redux-thunk": "^3.1.0",
+    "sass": "^1.85.0",
+    "sass-loader": "^16.0.5",
+    "style-loader": "^4.0.0",
+    "swiper": "^11.2.4",
+    "terser-webpack-plugin": "^5.3.11",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-merge": "^6.0.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react": "^7.37.4",
+    "globals": "^16.0.0",
+    "webpack-bundle-analyzer": "^4.10.2",
+    "webpack-dev-server": "^5.2.0"
+  },
+  "browserslist": {
+    "production": "> 1%, last 10 versions, Firefox ESR, not dead",
+    "development": "last 1 Chrome version"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@use 'sass:math';
+
+$font:
+  // Windows
+  'Segoe UI',
+  // 跨平台。系统默认
+  system-ui, 
+  // 苹果系列
+  -apple-system, BlinkMacSystemFont,
+  // 安卓
+  'Roboto',
+  // Linux
+  'Noto Sans', 'Liberation Sans',
+  // 兜底方案
+  Helvetica, Arial, sans-serif,
+  // Emoji 表情
+  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+// 字体大小
+$fs: 16px;
+// 小一号字体
+$fs2: .875rem;
+
+// 圆角大小
+$radius: 6px;
+
+// 黄金比例
+$goldRatio: math.div(math.sqrt(5)-1, 2);

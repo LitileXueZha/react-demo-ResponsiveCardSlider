@@ -1,0 +1,40 @@
+@use './reset.css';
+@use './var.scss' as *;
+@use './typography.scss';
+
+// 颜色主题 primer
+@mixin light {
+  --fg: #1F2328;
+  --fg-emphasis: #fff;
+  --canvas: #fff;
+  --accent-emphasis: #0969da;
+  --shadow-m: 0 3px 6px rgba(140,149,159,0.15);
+  --shadow-l: 0 8px 24px rgba(140,149,159,0.2);
+}
+// 暗黑
+@mixin dark {
+  --fg: #e6edf3;
+  --canvas: #0d1117;
+}
+
+:root {
+  box-sizing: border-box;
+  color-scheme: light;
+  @include light();
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    @include dark();
+  }
+}
+
+html, body {
+  font-family: $font;
+  font-size: $fs;
+  line-height: 1.375;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  color: var(--fg);
+  background-color: var(--canvas);
+}

@@ -1,0 +1,224 @@
+@use 'swiper/scss';
+@use 'swiper/scss/pagination';
+@use 'swiper/scss/a11y';
+@use 's/styles/var.scss' as *;
+
+.intro {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  overflow: hidden;
+
+  .title {
+    font-size: 56px;
+    line-height: 1;
+  }
+
+  .desc {
+    line-height: 1.5rem;
+    font-size: $fs+2;
+  }
+
+  .btn {
+    margin: 20px 0 24px 0;
+    padding: 10px 1.5rem;
+    appearance: none;
+    border: none;
+    border-radius: 999px;
+    color: var(--fg-emphasis);
+    background-color: var(--fg);
+    cursor: pointer;
+    transition: 250ms;
+
+    &:hover {
+      opacity: 0.85;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.85;
+    }
+
+    & .svgicon {
+      width: 20px;
+      height: 20px;
+      margin: -3px 6px 0 0;
+      vertical-align: middle;
+    }
+  }
+}
+
+$w: 232px;
+$h: 327px;
+.card {
+  width: $w;
+  height: $h;
+  border-radius: 20px;
+  overflow: hidden;
+  transform: scale(0.9);
+  transition: 350ms;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: var(--shadow-m);
+  }
+
+  .swiper-slide-active & {
+    transform: scale(1);
+    cursor: auto;
+  }
+}
+@mixin containerWidth($n) {
+  width: $n*$w + 20px*($n - 1);
+}
+.card-list {
+  @include containerWidth(3);
+}
+.card-nav {
+  margin: 10px 0 60px 0;
+}
+// 手机端
+@media (max-width: 768px) {
+  .intro {
+    text-align: left;
+  }
+  .card-list {
+    @include containerWidth(2);
+    margin-left: 0;
+  }
+  .card-nav {
+    width: $w !important;
+    text-align: center;
+  }
+}
+// 平板端
+@media (max-width: 1024px) {}
+
+.swiper-pagination-bullet {
+  transition: 350ms;
+  transform: scale(0.75);
+  &-active {
+    background-color: var(--fg);
+    transform: scale(1);
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  line-height: 1;
+
+  &-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    background-color: #eee;
+    opacity: 0.85;
+    transition: 350ms;
+  }
+  &:hover &-bg {
+    opacity: 1;
+  }
+
+  &-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .salary {
+      color: var(--fg-emphasis);
+      font-size: 32px;
+      font-weight: 600;
+      margin: 0 0 6px 0;
+    }
+    .salary-info {
+      display: flex;
+      align-items: center;
+      padding: 8px 12px;
+      background-color: var(--canvas);
+      border-radius: 999px;
+
+      &::after {
+        content: '';
+        position: relative;
+        left: 3px;
+        top: 1px;
+        width: 14px;
+        height: 14px;
+        background: url('s/assets/arrow-down.svg');
+        background-size: contain;
+      }
+
+      .icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+      }
+    }
+  }
+
+  &-cash {
+    display: flex;
+    align-items: center;
+    margin: 16px 10px;
+    padding: 10px;
+    background-color: var(--canvas);
+    text-align: left;
+    border-radius: $radius+4;
+    white-space: nowrap;
+
+    &-info {
+      flex: 1;
+      width: 0;
+      margin-left: 10px;
+      overflow: hidden;
+      
+      .detail {
+        display: flex;
+        
+        &-text {
+          flex: 1;
+          width: 0;
+          overflow: hidden;
+        }
+      }
+    }
+
+    .amount {
+      margin-left: 10px;
+    }
+
+    .remark {
+      font-size: 11px;
+      opacity: .5;
+    }
+
+    .action {
+      appearance: none;
+      margin-left: 10px;
+      padding: 6px 12px;
+      color: var(--fg-emphasis);
+      background-color: var(--accent-emphasis);
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.85;
+      }  
+    }
+  }
+
+  .icon {
+    width: 32px;
+    height: 32px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+}
