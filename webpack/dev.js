@@ -14,7 +14,7 @@ module.exports = merge(baseConfig, {
     compress: false,
     historyApiFallback: {},
     static: {
-      publicPath: '/react-demo-ResponsiveCardSlider',
+      publicPath: '/react-demo-ResponsiveCardSlider/',
     },
   },
 });

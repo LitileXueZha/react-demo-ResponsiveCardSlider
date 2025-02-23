@@ -12,7 +12,7 @@ var STATIC = path.resolve(__dirname, '../dist');
 function onHttpComing(req, res) {
   var pathname = req.url.split('?')[0];
   // 支持 publicPath
-  pathname = pathname.replace('/react-demo-ResponsiveCardSlider', '');
+  pathname = pathname.replace('/react-demo-ResponsiveCardSlider/', '');
   if (pathname === '/' || pathname === '') {
     pathname = '/index.html';
   }
